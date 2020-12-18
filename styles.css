@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(175, 103, 233);
+  background: linear-gradient(
+    180deg,
+    rgba(175, 103, 233, 1) 0%,
+    rgba(101, 101, 231, 1) 100%
+  );
+}
