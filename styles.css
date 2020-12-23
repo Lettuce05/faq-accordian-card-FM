@@ -5,6 +5,7 @@
 
 body {
   font-family: "Kumbh Sans", sans-serif;
+  color: hsl(238, 29%, 16%);
 }
 
 .container {
@@ -28,7 +29,10 @@ body {
   border-radius: 20px;
   height: 500px;
   width: 80%;
+  min-width: 830px;
   display: flex;
+  position: relative;
+  transition: height 0.5s;
 }
 
 .faqCard__illustration {
@@ -36,9 +40,14 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .faqCard__illustration > img {
+  position: absolute;
+}
+
+.faqCard > img {
   position: absolute;
 }
 
@@ -74,7 +83,13 @@ body {
 }
 
 .faqCard__questions {
+  max-height: 100%;
   width: 80%;
+  font-weight: 400;
+}
+
+.faqCard__question {
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -84,8 +99,13 @@ h1 {
 .question {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.question:hover {
+  color: hsl(14, 88%, 65%);
 }
 
 .question > img {
@@ -94,7 +114,7 @@ h1 {
 
 hr {
   border: none;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px hsl(240, 5%, 91%);
 }
 
 #Q1,
@@ -122,9 +142,18 @@ hr {
 }
 
 #Q5:checked + .answer {
+  /* transition: all 3s; */
   display: initial;
 }
 
 .answer {
   display: none;
+}
+
+.active {
+  font-weight: 700 !important;
+}
+
+.active-arrow {
+  transform: rotate(180deg);
 }
