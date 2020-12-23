@@ -28,11 +28,11 @@ body {
   border-radius: 20px;
   height: 500px;
   width: 80%;
-  display: flex
+  display: flex;
 }
 
 .faqCard__illustration {
-  flex: .5;
+  flex: 0.5;
   height: 100%;
   width: 100%;
   position: relative;
@@ -64,7 +64,7 @@ body {
 }
 
 .faqCard__right {
-  flex: .5;
+  flex: 0.5;
   height: 100%;
   width: 100%;
   display: flex;
@@ -72,7 +72,6 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-
 
 .faqCard__questions {
   width: 80%;
@@ -93,17 +92,36 @@ h1 {
   object-fit: contain;
 }
 
-
 hr {
   border: none;
   border-bottom: solid 1px gray;
 }
 
-#arrow-input {
+#Q1,
+#Q2,
+#Q3,
+#Q4,
+#Q5 {
   display: none;
 }
 
-#arrow-input:checked + .answer {
+#Q1:checked + .answer {
+  display: initial;
+}
+
+#Q2:checked + .answer {
+  display: initial;
+}
+
+#Q3:checked + .answer {
+  display: initial;
+}
+
+#Q4:checked + .answer {
+  display: initial;
+}
+
+#Q5:checked + .answer {
   display: initial;
 }
 
