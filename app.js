@@ -1,6 +1,8 @@
 const questions = document.querySelectorAll(".question");
 const checkboxes = document.querySelectorAll("input");
 const faqCard = document.querySelector(".faqCard");
+const answers = document.querySelectorAll(".answer");
+let answerHeight;
 
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener("change", ()=>{
@@ -27,30 +29,30 @@ checkboxes.forEach(checkbox => {
                 questions[4].querySelector("img").classList.toggle("active-arrow");
             break;
         }
+
+        answers.forEach(answer => {
+            if(answer.offsetHeight > 0){
+                answerHeight = answer.offsetHeight;
+            }
+        });
         let count = 0;
         checkboxes.forEach(checkbox =>{
             if(checkbox.checked){
                 count++;
             }
         });
-
-        switch(count){
-            case 0:
-            case 1:
-                faqCard.style.height = "500px";
-            break;
-            case 2:
-                faqCard.style.height = "550px";
-            break;
-            case 3:
-                faqCard.style.height = "600px";
-            break;
-            case 4:
-                faqCard.style.height = "650px";
-            break;
-            case 5:
-                faqCard.style.height = "700px";
+        console.log(count);
+        let offSetHeight;
+        let extraHeight = 10;
+        if(window.innerWidth < 900){
+            extraHeight = 15;
+        } else if(window.innerWidth < 700){
+            extraHeight = 20;
         }
+        offSetHeight = (answerHeight * count) + (count * extraHeight);
+        console.log(answerHeight);
+        console.log(offSetHeight);
+        faqCard.style.height = `${offSetHeight + 600}px`;
     })
 })
 

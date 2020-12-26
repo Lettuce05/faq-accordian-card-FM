@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background: rgb(175, 103, 233);
   background: linear-gradient(
     180deg,
@@ -29,7 +29,8 @@ body {
   border-radius: 20px;
   height: 500px;
   width: 80%;
-  min-width: 830px;
+  /* min-width: 830px; */
+  max-width: 1045px;
   display: flex;
   position: relative;
   transition: height 0.5s;
@@ -55,12 +56,14 @@ body {
   top: 70px;
   left: -75px;
   z-index: 2;
+  transition: all 0.5s;
 }
 
 .box {
   top: 200px;
-  left: -120px;
+  left: -95px;
   z-index: 3;
+  transition: all 0.5s;
 }
 
 .shadow {
@@ -70,6 +73,25 @@ body {
   /* width: 700px; */
   height: 800px;
   z-index: 1;
+  transition: all 0.5s;
+}
+
+@media (max-width: 1000px) {
+  .box {
+    top: 190px;
+    left: -115px;
+    transform: scale(0.7);
+  }
+
+  .woman {
+    transform: scale(0.7);
+    left: -145px;
+  }
+
+  .shadow {
+    transform: scale(0.7);
+    left: -440px;
+  }
 }
 
 .faqCard__right {
@@ -79,7 +101,46 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .faqCard {
+    flex-direction: column;
+    width: 350px;
+    height: 600px;
+  }
+
+  .faqCard__illustration {
+    clip-path: none;
+    flex: 0;
+  }
+  .faqCard__right {
+    padding-top: 150px;
+    flex: 1;
+    margin-bottom: 50px;
+  }
+  .box {
+    transform: scale(0.5);
+    top: -82px;
+    left: 3px;
+  }
+
+  .woman {
+    transform: scale(0.5);
+    top: -195px;
+    left: -60px;
+  }
+
+  .shadow {
+    transform: scale(0.29);
+    top: -410px;
+    left: -230px;
+  }
 }
 
 .faqCard__questions {
@@ -94,6 +155,12 @@ body {
 
 h1 {
   margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 .question {
